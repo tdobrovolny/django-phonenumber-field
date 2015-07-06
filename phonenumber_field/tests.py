@@ -66,6 +66,10 @@ class PhoneNumberFieldTestCase(TestCase):
     def test_field_returns_correct_type(self):
         model = OptionalPhoneNumber()
         self.assertEqual(model.phone_number, None)
+        model.phone_number = ''
+        self.assertEqual(model.phone_number, None)
+        model.phone_number = ' '
+        self.assertEqual(model.phone_number, None)
         model.phone_number = '+49 176 96842671'
         self.assertEqual(type(model.phone_number), PhoneNumber)
         model.phone_number = phonenumberutil.parse(
