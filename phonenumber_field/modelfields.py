@@ -62,7 +62,7 @@ class PhoneNumberField(models.Field):
 
         if value != '':
             value = to_python(value)
-        
+
         if isinstance(value, string_types):
             # it is an invalid phone number
             return value
