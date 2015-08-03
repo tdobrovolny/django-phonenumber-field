@@ -79,7 +79,9 @@ class PhoneNumber(phonenumbers.phonenumber.PhoneNumber):
         return self.format_as(phonenumbers.PhoneNumberFormat.RFC3966)
 
     def __len__(self):
-        return len(self.__unicode__())
+        number = self.__unicode__()
+        if number:
+            return len(number)
 
     def __eq__(self, other):
         """
