@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import sys
-import phonenumbers
+from django.conf import settings
 from django.core import validators
 from phonenumbers.phonenumberutil import NumberParseException
-from django.conf import settings
+import phonenumbers
+import sys
 
 
 # Snippet from the `six` library to help with Python3 compatibility
